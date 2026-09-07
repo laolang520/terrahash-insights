@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credentials & Site Control | Terrahash Energy</title>
+    <title>Credentials & Official Appendices | Terrahash Energy</title>
     <style>
         :root {
             --primary-navy: #0a192f;
@@ -23,7 +23,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background-color: var(--primary-navy);
             color: var(--text-main);
             line-height: 1.6;
@@ -54,7 +54,6 @@
             font-weight: bold;
             color: #ffffff;
             text-decoration: none;
-            letter-spacing: 0.5px;
         }
 
         .logo span {
@@ -67,7 +66,6 @@
             margin-left: 20px;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.2s;
         }
 
         nav a:hover {
@@ -92,37 +90,19 @@
             font-size: 2.8rem;
             color: #ffffff;
             margin-bottom: 15px;
-            line-height: 1.2;
         }
 
         .hero p {
             color: var(--text-muted);
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        .status-pill {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent-green);
-            border: 1px solid var(--accent-green);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin: 0 auto;
         }
 
         /* Section Layout */
         .section {
             padding: 60px 0;
             border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-header {
-            margin-bottom: 30px;
         }
 
         .section-header h2 {
@@ -133,10 +113,10 @@
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1rem;
+            margin-bottom: 30px;
         }
 
-        /* Credential Cards */
+        /* Credential Grid & Cards */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -154,7 +134,9 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 30px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card-title {
@@ -179,9 +161,18 @@
             color: var(--text-main);
         }
 
-        .doc-badge {
-            display: inline-flex;
+        .card-action {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .doc-badge {
             background-color: rgba(56, 189, 248, 0.1);
             color: var(--accent-cyan);
             padding: 4px 10px;
@@ -190,153 +181,133 @@
             font-family: monospace;
         }
 
-        /* Footer */
+        /* 下载附录按钮样式 */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-green);
+            color: #0a192f;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-download:hover {
+            opacity: 0.9;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
         }
-
-        footer a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Navigation Header -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Terrahash <span>Energy</span></a>
             <nav>
                 <a href="#land-rights">Land Control</a>
-                <a href="#power-interconnection">Grid & Power</a>
-                <a href="#environmental">Environmental</a>
-                <a href="#crypto-hosting">Data & Compute</a>
+                <a href="#power-interconnection">Power & Grid</a>
+                <a href="#appendices">Document Archive</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- Hero Title Section -->
         <section class="hero">
-            <span class="status-pill">Official Proof of Operations</span>
-            <h1>Site Control & Regulatory Compliance Proofs</h1>
-            <p>Verification repository for land rights, power interconnection, environmental compliance, and sustainable digital asset infrastructure across our U.S. development sites.</p>
+            <h1>Site Control & Official Document Archive</h1>
+            <p>Verification portal for U.S. land rights, interconnection permits, and environmental compliance. Download verified PDF appendices below.</p>
         </section>
 
-        <!-- Section 1: Land Rights & Site Control -->
+        <!-- 资质与附录卡片 -->
         <section id="land-rights" class="section">
             <div class="section-header">
-                <h2>1. U.S. Land Rights & Site Control</h2>
-                <p>Binding legal agreements securing real estate for utility-scale solar, battery storage, and high-density compute facilities.</p>
+                <h2>1. U.S. Land Control & Lease Credentials</h2>
+                <p>Secured real estate deeds and ground lease approvals for utility-scale deployment.</p>
             </div>
 
             <div class="grid-2">
+                <!-- 附录文件 1 -->
                 <div class="card">
-                    <div class="card-title">Long-Term Ground Lease Agreement</div>
-                    <ul class="meta-list">
-                        <li><strong>Property Type:</strong> Industrial Heavy / Renewable Energy Overlay District</li>
-                        <li><strong>Jurisdiction:</strong> Reeves County, Texas / Carbon County, Wyoming</li>
-                        <li><strong>Term Length:</strong> 30 Years + (2) 10-Year Extension Options</li>
-                        <li><strong>Acreage Secured:</strong> 640+ Acres (Fee Simple / Dedicated Easements)</li>
-                    </ul>
-                    <span class="doc-badge">RECORDED DOC ID: TX-2026-RE-08921</span>
+                    <div>
+                        <div class="card-title">Long-Term Ground Lease Memorandum</div>
+                        <ul class="meta-list">
+                            <li><strong>Jurisdiction:</strong> Reeves County, Texas</li>
+                            <li><strong>Acreage:</strong> 640+ Acres (Fee Simple)</li>
+                            <li><strong>Term:</strong> 30 Years Firm</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <span class="doc-badge">DOC ID: TX-2026-RE-08921</span>
+                        <!-- 附录下载链接 -->
+                        <a href="docs/Ground_Lease_Agreement.pdf" download class="btn-download">
+                            📄 Download PDF (1.2 MB)
+                        </a>
+                    </div>
                 </div>
 
+                <!-- 附录文件 2 -->
                 <div class="card">
-                    <div class="card-title">Zoning & Special Use Permit (SUP)</div>
-                    <ul class="meta-list">
-                        <li><strong>Issuing Authority:</strong> County Board of Commissioners</li>
-                        <li><strong>Approved Use:</strong> Renewable Energy Facility & Data Processing Center</li>
-                        <li><strong>Setback & Noise Compliance:</strong> Fully Permitted per Local Ordinance</li>
-                        <li><strong>Status:</strong> Approved & Unappealable</li>
-                    </ul>
-                    <span class="doc-badge">PERMIT NO: SUP-2025-0441-A</span>
+                    <div>
+                        <div class="card-title">County Special Use Permit (SUP)</div>
+                        <ul class="meta-list">
+                            <li><strong>Issuing Authority:</strong> Board of County Commissioners</li>
+                            <li><strong>Permit Type:</strong> Renewable Data Processing Overlay</li>
+                            <li><strong>Status:</strong> Approved & Active</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <span class="doc-badge">PERMIT: SUP-2025-0441-A</span>
+                        <!-- 附录下载链接 -->
+                        <a href="docs/Special_Use_Permit.pdf" download class="btn-download">
+                            📄 Download PDF (850 KB)
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Power Interconnection & Off-Grid Utility -->
         <section id="power-interconnection" class="section">
             <div class="section-header">
-                <h2>2. Interconnection & Power Purchase (PPA)</h2>
-                <p>Grid integration permits, substation access agreements, and off-grid microgrid operating frameworks.</p>
+                <h2>2. Interconnection & Grid PPA Appendices</h2>
+                <p>Transmission grid access rights and renewable power purchase documentation.</p>
             </div>
 
             <div class="grid-2">
+                <!-- 附录文件 3 -->
                 <div class="card">
-                    <div class="card-title">Large Generator Interconnection Agreement (LGIA)</div>
-                    <ul class="meta-list">
-                        <li><strong>RTO / ISO Region:</strong> ERCOT / MISO Utility Interconnect</li>
-                        <li><strong>Interconnection Voltage:</strong> 138kV Transmission Substation Access</li>
-                        <li><strong>Capacity Approved:</strong> 150 MW Firm Capacity + Demand Response</li>
-                        <li><strong>Status:</strong> Queue Position Secured / Facility Study Complete</li>
-                    </ul>
-                    <span class="doc-badge">AGREEMENT REF: ERCOT-IA-2026-09</span>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">Renewable Power Purchase Agreement (PPA)</div>
-                    <ul class="meta-list">
-                        <li><strong>Energy Mix:</strong> 100% Behind-the-Meter Solar + BESS Storage</li>
-                        <li><strong>Curtailment Rights:</strong> Dynamic Grid Balancing & Peak Shaving Enabled</li>
-                        <li><strong>Carbon Offset:</strong> Zero Scope 1 / Scope 2 Direct Emissions</li>
-                    </ul>
-                    <span class="doc-badge">CONTRACT NO: PPA-TH-RENEWABLE-2026</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Environmental & Regulatory Compliance -->
-        <section id="environmental" class="section">
-            <div class="section-header">
-                <h2>3. Environmental Approvals & Clearances</h2>
-                <p>Environmental Impact Assessments (EIA) ensuring sustainable and low-impact site development.</p>
-            </div>
-
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-title">NEPA & Phase I ESA Clearance</div>
-                    <ul class="meta-list">
-                        <li><strong>Assessment Type:</strong> Phase I Environmental Site Assessment (ASTM E1527-21)</li>
-                        <li><strong>Finding:</strong> No Recognized Environmental Conditions (RECs)</li>
-                        <li><strong>Stormwater Management:</strong> NPDES Construction General Permit Active</li>
-                    </ul>
-                    <span class="doc-badge">REPORT REF: ENV-ESA1-2025-998</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Crypto Infrastructure & Green Compute -->
-        <section id="crypto-hosting" class="section">
-            <div class="section-header">
-                <h2>4. Green Compute & Digital Asset Operations</h2>
-                <p>Framework for eco-friendly Bitcoin mining operations and high-performance computing (HPC) data centers.</p>
-            </div>
-
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-title">Zero-Carbon Proof-of-Work Facility Standard</div>
-                    <ul class="meta-list">
-                        <li><strong>Core Asset:</strong> Bitcoin (BTC) Sustainable Compute Infrastructure</li>
-                        <li><strong>PUE Target:</strong> Ultra-Efficient PUE &lt; 1.05 via Immersion Cooling</li>
-                        <li><strong>Compliance:</strong> Fully compliant with U.S. Federal & State Financial/Operational Regulations</li>
-                    </ul>
-                    <span class="doc-badge">AUDIT STATUS: VERIFIED BY INDEPENDENT CPT</span>
+                    <div>
+                        <div class="card-title">Large Generator Interconnection Agreement</div>
+                        <ul class="meta-list">
+                            <li><strong>Grid Operator:</strong> ERCOT Substation Interconnect</li>
+                            <li><strong>Approved Capacity:</strong> 150 MW Firm Capacity</li>
+                            <li><strong>Voltage Class:</strong> 138kV Transmission Line</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <span class="doc-badge">REF: ERCOT-IA-2026-09</span>
+                        <!-- 附录下载链接 -->
+                        <a href="docs/Interconnection_Agreement.pdf" download class="btn-download">
+                            📄 Download PDF (2.4 MB)
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Terrahash Energy. All Rights Reserved. | <a href="https://github.com/laolang520/terrahash-insights" target="_blank">View GitHub Repository</a></p>
-        <p style="margin-top: 5px; font-size: 0.8rem; color: #64748b;">This page serves as an official proof of site control and operational compliance for institutional partners.</p>
+        <p>&copy; 2026 Terrahash Energy. All Rights Reserved.</p>
     </footer>
 
 </body>
