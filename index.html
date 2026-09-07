@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credentials & Official Appendices | Terrahash Energy</title>
+    <title>Institutional Proof of Reserves, Site Control & Regulatory Permits | Terrahash Energy</title>
     <style>
         :root {
             --primary-navy: #0a192f;
             --secondary-navy: #112240;
             --accent-green: #10b981;
             --accent-cyan: #38bdf8;
+            --accent-gold: #f59e0b;
             --text-main: #e2e8f0;
             --text-muted: #94a3b8;
             --border-color: #233554;
@@ -29,7 +30,7 @@
             line-height: 1.6;
         }
 
-        /* Top Navigation Header */
+        /* Fixed Navigation Bar */
         header {
             position: sticky;
             top: 0;
@@ -72,36 +73,79 @@
             color: var(--accent-cyan);
         }
 
-        /* Main Container */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Hero Section */
+        /* Hero Header */
         .hero {
             text-align: center;
-            padding: 40px 0 60px;
+            padding: 40px 0 50px;
             border-bottom: 1px solid var(--border-color);
         }
 
+        .status-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: #ffffff;
             margin-bottom: 15px;
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1.15rem;
+            max-width: 850px;
             margin: 0 auto;
+        }
+
+        /* High Level Key Indicators */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background-color: var(--secondary-navy);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Section Layout */
         .section {
-            padding: 60px 0;
+            padding: 50px 0;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -116,7 +160,6 @@
             margin-bottom: 30px;
         }
 
-        /* Credential Grid & Cards */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -140,7 +183,7 @@
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--accent-cyan);
             margin-bottom: 15px;
             font-weight: 600;
@@ -181,7 +224,6 @@
             font-family: monospace;
         }
 
-        /* 下载附录按钮样式 */
         .btn-download {
             display: inline-flex;
             align-items: center;
@@ -200,11 +242,45 @@
             opacity: 0.9;
         }
 
+        /* Document Archive Table */
+        .archive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--secondary-navy);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .archive-table th, .archive-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .archive-table th {
+            background-color: rgba(16, 185, 129, 0.05);
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .archive-table td {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .archive-table td.doc-name {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -214,88 +290,152 @@
         <div class="nav-container">
             <a href="#" class="logo">Terrahash <span>Energy</span></a>
             <nav>
-                <a href="#land-rights">Land Control</a>
-                <a href="#power-interconnection">Power & Grid</a>
-                <a href="#appendices">Document Archive</a>
+                <a href="#treasury-proof">Capital & Treasury</a>
+                <a href="#land-control">Land Rights</a>
+                <a href="#grid-power">Power & Grid</a>
+                <a href="#document-archive">Download Archive</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
 
+        <!-- Hero Header Section -->
         <section class="hero">
-            <h1>Site Control & Official Document Archive</h1>
-            <p>Verification portal for U.S. land rights, interconnection permits, and environmental compliance. Download verified PDF appendices below.</p>
+            <span class="status-badge">Audited Compliance & Financial Strength</span>
+            <h1>Institutional Proof of Reserves & Site Control</h1>
+            <p>Verification dashboard disclosing verified capital reserves, executed long-term ground leases, and active grid interconnection permits for institutional partners and investors.</p>
         </section>
 
-        <!-- 资质与附录卡片 -->
-        <section id="land-rights" class="section">
+        <!-- Metrics Dashboard -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">$50M+ USD</div>
+                <div class="metric-label">Capital Reserves & Committed Liquidity</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">640 Acres</div>
+                <div class="metric-label">Secured Industrial Fee-Simple Land</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">150 MW</div>
+                <div class="metric-label">Approved Grid Interconnection (ERCOT)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">100% Zero Emission</div>
+                <div class="metric-label">Behind-The-Meter Solar + Storage Mix</div>
+            </div>
+        </div>
+
+        <!-- Section 1: Financial Strength & Bank Proofs -->
+        <section id="treasury-proof" class="section">
             <div class="section-header">
-                <h2>1. U.S. Land Control & Lease Credentials</h2>
-                <p>Secured real estate deeds and ground lease approvals for utility-scale deployment.</p>
+                <h2>1. Financial Standing & Bank Proof of Funds (POF)</h2>
+                <p>Verifiable treasury deployment capability backed by institutional banking facilities and third-party CPAs.</p>
             </div>
 
             <div class="grid-2">
-                <!-- 附录文件 1 -->
                 <div class="card">
                     <div>
-                        <div class="card-title">Long-Term Ground Lease Memorandum</div>
+                        <div class="card-title">Bank Letter of Financial Standing (SBLC / POF)</div>
                         <ul class="meta-list">
-                            <li><strong>Jurisdiction:</strong> Reeves County, Texas</li>
-                            <li><strong>Acreage:</strong> 640+ Acres (Fee Simple)</li>
-                            <li><strong>Term:</strong> 30 Years Firm</li>
+                            <li><strong>Issuing Institution:</strong> Tier-1 Commercial Bank (U.S.)</li>
+                            <li><strong>Verified Balance / Facility:</strong> $50,000,000 USD Unencumbered Equity</li>
+                            <li><strong>Account Purpose:</strong> Renewable Energy Data Center Infrastructure Buildout</li>
+                            <li><strong>Audit Attestation:</strong> Verified by Independent Certified Public Accountant (CPA)</li>
                         </ul>
                     </div>
                     <div class="card-action">
-                        <span class="doc-badge">DOC ID: TX-2026-RE-08921</span>
-                        <!-- 附录下载链接 -->
-                        <a href="docs/Ground_Lease_Agreement.pdf" download class="btn-download">
-                            📄 Download PDF (1.2 MB)
+                        <span class="doc-badge">REF: BANK-POF-2026-TH</span>
+                        <a href="docs/Proof_of_Funds_Attestation.pdf" download class="btn-download">
+                            📄 Download PDF (1.1 MB)
                         </a>
                     </div>
                 </div>
 
-                <!-- 附录文件 2 -->
                 <div class="card">
                     <div>
-                        <div class="card-title">County Special Use Permit (SUP)</div>
+                        <div class="card-title">Corporate Treasury & Capital Commitment Letter</div>
                         <ul class="meta-list">
-                            <li><strong>Issuing Authority:</strong> Board of County Commissioners</li>
-                            <li><strong>Permit Type:</strong> Renewable Data Processing Overlay</li>
-                            <li><strong>Status:</strong> Approved & Active</li>
+                            <li><strong>Executing Entity:</strong> Terrahash Energy LLC</li>
+                            <li><strong>Capital Commitment:</strong> Phase 1 & 2 Infrastructure EPC Funding Guaranteed</li>
+                            <li><strong>Escrow Status:</strong> Performance Security Funds Deposited per Interconnection Request</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <span class="doc-badge">DOC ID: TREASURY-2026-CERT</span>
+                        <a href="docs/Corporate_Treasury_Letter.pdf" download class="btn-download">
+                            📄 Download PDF (780 KB)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Land Rights & Legal Deeds -->
+        <section id="land-control" class="section">
+            <div class="section-header">
+                <h2>2. Executed Land Control & Real Estate Deeds</h2>
+                <p>Recorded long-term leases, industrial zoning approvals, and land ownership proofs.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div>
+                        <div class="card-title">Memorandum of Long-Term Ground Lease</div>
+                        <ul class="meta-list">
+                            <li><strong>Jurisdiction:</strong> Reeves County, Texas (Permian Basin Energy Corridor)</li>
+                            <li><strong>Land Parcel Acreage:</strong> 640 Acres (Fee Simple Industrial Overlay)</li>
+                            <li><strong>Lease Term:</strong> 30-Year Firm Term + Two 10-Year Renewal Options</li>
+                            <li><strong>Recording Authority:</strong> County Clerk & Recorder Office</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <span class="doc-badge">RECORDED: TX-2026-RE-08921</span>
+                        <a href="docs/Ground_Lease_Agreement.pdf" download class="btn-download">
+                            📄 Download PDF (1.5 MB)
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-title">County Special Use Permit (SUP) & Zoning Ordinance</div>
+                        <ul class="meta-list">
+                            <li><strong>Approving Body:</strong> Reeves County Board of Commissioners</li>
+                            <li><strong>Permitted Operation:</strong> High-Density Compute Data Center & BESS Solar Farm</li>
+                            <li><strong>Environmental & Noise Ordinance:</strong> Fully Compliant / Unappealable Final Order</li>
                         </ul>
                     </div>
                     <div class="card-action">
                         <span class="doc-badge">PERMIT: SUP-2025-0441-A</span>
-                        <!-- 附录下载链接 -->
                         <a href="docs/Special_Use_Permit.pdf" download class="btn-download">
-                            📄 Download PDF (850 KB)
+                            📄 Download PDF (920 KB)
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="power-interconnection" class="section">
+        <!-- Section 3: Interconnection & Utility Power -->
+        <section id="grid-power" class="section">
             <div class="section-header">
-                <h2>2. Interconnection & Grid PPA Appendices</h2>
-                <p>Transmission grid access rights and renewable power purchase documentation.</p>
+                <h2>3. Interconnection Agreement & Power Supply (PPA)</h2>
+                <p>Binding utility interconnection queue rights and dynamic load response agreements.</p>
             </div>
 
             <div class="grid-2">
-                <!-- 附录文件 3 -->
                 <div class="card">
                     <div>
-                        <div class="card-title">Large Generator Interconnection Agreement</div>
+                        <div class="card-title">Large Generator Interconnection Agreement (LGIA)</div>
                         <ul class="meta-list">
-                            <li><strong>Grid Operator:</strong> ERCOT Substation Interconnect</li>
-                            <li><strong>Approved Capacity:</strong> 150 MW Firm Capacity</li>
-                            <li><strong>Voltage Class:</strong> 138kV Transmission Line</li>
+                            <li><strong>Grid Regional Operator:</strong> ERCOT Substation Interconnect</li>
+                            <li><strong>Total Approved Capacity:</strong> 150 MW Firm Capacity</li>
+                            <li><strong>Point of Interconnection (POI):</strong> 138kV Substation Extension Line</li>
                         </ul>
                     </div>
                     <div class="card-action">
                         <span class="doc-badge">REF: ERCOT-IA-2026-09</span>
-                        <!-- 附录下载链接 -->
                         <a href="docs/Interconnection_Agreement.pdf" download class="btn-download">
                             📄 Download PDF (2.4 MB)
                         </a>
@@ -304,10 +444,61 @@
             </div>
         </section>
 
+        <!-- Section 4: Document Archive Table -->
+        <section id="document-archive" class="section">
+            <div class="section-header">
+                <h2>4. Complete Institutional Appendix Archive</h2>
+                <p>Download signed and notarized regulatory copies for corporate due diligence.</p>
+            </div>
+
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th>Document Title</th>
+                        <th>Category</th>
+                        <th>Format</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="doc-name">Bank Proof of Funds (POF) Attestation Letter ($50M)</td>
+                        <td>Financial Reserve</td>
+                        <td>PDF (1.1 MB)</td>
+                        <td><a href="docs/Proof_of_Funds_Attestation.pdf" download class="btn-download">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td class="doc-name">Corporate Treasury Escrow Guarantee</td>
+                        <td>Treasury Commitment</td>
+                        <td>PDF (780 KB)</td>
+                        <td><a href="docs/Corporate_Treasury_Letter.pdf" download class="btn-download">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td class="doc-name">Reeves County Memorandum of Ground Lease (640 Acres)</td>
+                        <td>Real Estate Control</td>
+                        <td>PDF (1.5 MB)</td>
+                        <td><a href="docs/Ground_Lease_Agreement.pdf" download class="btn-download">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td class="doc-name">Special Use Permit Ordinance (SUP-2025-0441-A)</td>
+                        <td>Zoning Permit</td>
+                        <td>PDF (920 KB)</td>
+                        <td><a href="docs/Special_Use_Permit.pdf" download class="btn-download">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td class="doc-name">150 MW ERCOT Large Generator Interconnection Agreement</td>
+                        <td>Power Interconnect</td>
+                        <td>PDF (2.4 MB)</td>
+                        <td><a href="docs/Interconnection_Agreement.pdf" download class="btn-download">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Terrahash Energy. All Rights Reserved.</p>
+        <p>&copy; 2026 Terrahash Energy. All Rights Reserved. | Confidential Institutional Information</p>
     </footer>
 
 </body>
