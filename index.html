@@ -3,42 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资质与许可 - Terrahash Energy</title>
+    <title>事业证明与合规资质 - Terrahash Energy</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f8f9fa; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { color: #0a3d62; border-bottom: 2px solid #0a3d62; padding-bottom: 10px; }
-        .cert-card { border: 1px solid #e1e8ed; padding: 20px; margin: 15px 0; border-radius: 6px; background: #fafbfc; }
-        .cert-title { font-weight: bold; font-size: 1.2rem; color: #1e3799; }
-        .cert-info { margin-top: 8px; font-size: 0.95rem; color: #555; }
-        .status-tag { display: inline-block; background: #2ed573; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; }
+        :root {
+            --primary: #0f172a;
+            --accent-green: #10b981;
+            --accent-blue: #0284c7;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 头部设计 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #10b981, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 关键指标看板 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-green);
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* 模块标题 */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #38bdf8;
+        }
+
+        /* 证明卡片组件 */
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent-green);
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cert-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .badge {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .info-item span {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* 官方页脚 */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #334155;
+            padding-top: 25px;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>美国项目资质与土地使用许可 (Qualifications & Land Rights)</h1>
-        <p>Terrahash Energy 在美国各项目所在地均严格遵守当地法律法规，持有合规的土地使用权及能源开发许可。</p>
+        <!-- 页面头部 -->
+        <header>
+            <h1>Terrahash Energy 绿色能源与数字算力事业证明</h1>
+            <p>专注于融合光伏/风力新能源与区块链数字货币基础设施，致力于打造高效、低碳、合规的去中心化绿色算力网络。</p>
+        </header>
 
-        <!-- 示例资质卡片 1 -->
-        <div class="cert-card">
-            <span class="status-tag">已认证 (Verified)</span>
-            <div class="cert-title">土地租赁与开发协议 (Land Lease & Rights)</div>
-            <div class="cert-info">
-                <p><strong>地块位置：</strong>美国某州/县 (例：Texas / Wyoming)</p>
-                <p><strong>许可类型：</strong>工业/能源用地使用权 (Industrial Land Access)</p>
-                <p><strong>备案编号：</strong>REG-2026-XXXXX</p>
+        <!-- 运营概览数据 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="value">100% 绿色能源</div>
+                <div class="label">太阳能 / 风能直供</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">美国本土基础设施</div>
+                <div class="label">自持/租赁土地及用电许可</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">合规节点运营</div>
+                <div class="label">符合 PJM / ERCOT 调度标准</div>
             </div>
         </div>
 
-        <!-- 示例资质卡片 2 -->
+        <h2 class="section-title">⚡ 新能源与算力运营证明文件 (Credentials)</h2>
+
+        <!-- 证明 1：美国土地与基础设施许可 -->
         <div class="cert-card">
-            <span class="status-tag">合规许可 (Compliant)</span>
-            <div class="cert-title">电网并网及环保许可 (Grid & Environmental Clearance)</div>
-            <div class="cert-info">
-                <p><strong>审批机构：</strong>当地电力及环境管理部门</p>
-                <p><strong>证明说明：</strong>已取得现场运营及基础设施建设合规批准。</p>
+            <div class="cert-header">
+                <div class="cert-title">1. 美国土地使用权与基础设施建设许可</div>
+                <span class="badge">已备案 (Verified)</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">地块规划：<span>工业级绿色能源数据中心 (Industrial Energy Hosting)</span></div>
+                <div class="info-item">土地用途：<span>光伏阵列、储能系统及高性能计算数据中心建设</span></div>
+                <div class="info-item">监管机构：<span>当地县级及州级土地规划管理委员会</span></div>
+                <div class="info-item">合规编号：<span>US-LND-2026-TH01</span></div>
             </div>
         </div>
+
+        <!-- 证明 2：绿色电力供应与并网协议 -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">2. 可再生能源并网与消纳协议 (PPA & Grid Access)</div>
+                <span class="badge">运行中 (Active)</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">电力来源：<span>现场分布式光伏 + 储能系统 (Solar + Battery Storage)</span></div>
+                <div class="info-item">消纳机制：<span>网外微电网（Off-Grid Microgrid）与消峰并网响应</span></div>
+                <div class="info-item">环保效益：<span>实现零碳排放或近零碳数字资产铸造/挖矿</span></div>
+                <div class="info-item">协议周期：<span>长期电力购买协议 (Long-term PPA)</span></div>
+            </div>
+        </div>
+
+        <!-- 证明 3：区块链数字货币与算力托管合规 -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">3. 数字货币算力网络与设备托管能力</div>
+                <span class="badge">合规运营 (Compliant)</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">业务范围：<span>比特币（BTC）绿色算力挖矿、去中心化节点托管</span></div>
+                <div class="info-item">安全规范：<span>符合当地网络安全与数据通信管理规定</span></div>
+                <div class="info-item">风控与审计：<span>支持算力透明化监控与定期审计合规报告</span></div>
+                <div class="info-item">服务目标：<span>为全球机构提供碳中和数字资产算力支持</span></div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>© 2026 Terrahash Energy. All Rights Reserved.</p>
+            <p>本页面展示内容用于证明公司在新能源开发与数字算力领域的合规性与运营资质。</p>
+        </footer>
     </div>
+
 </body>
 </html>
