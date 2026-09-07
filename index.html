@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港绿能算力科技集团 | Green Energy & Bitcoin Hashrate Infrastructure</title>
+    <style>
+        :root {
+            --bg-dark: #060d19;
+            --card-bg: #0d1b2a;
+            --accent-green: #10b981;
+            --accent-cyan: #38bdf8;
+            --accent-gold: #f59e0b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --border-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 顶部导航 */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(6, 13, 25, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        nav a {
+            color: var(--text-sub);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero 巨幕 */
+        .hero {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(rgba(6, 13, 25, 0.7), rgba(6, 13, 25, 0.9)), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 80px 40px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            font-size: 1.15rem;
+            max-width: 850px;
+            margin: 0 auto 30px;
+        }
+
+        /* 核心指标数据 */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .metric-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* 通用版块标题 */
+        .section-header {
+            margin-bottom: 35px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* 三栏/两栏网格 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 24px;
+        }
+
+        @media (max-width: 640px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .hero { padding: 40px 20px; }
+            .hero h1 { font-size: 2rem; }
+        }
+
+        /* 卡片基础样式 */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* 按钮与链接 */
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+
+        .btn-link:hover {
+            color: var(--accent-cyan);
+        }
+
+        .meta-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .meta-list li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--text-sub);
+        }
+
+        .meta-list strong {
+            color: var(--text-main);
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Terrahash <span>Energy Group</span></a>
+            <nav>
+                <a href="#hk-operations">香港总部与战略</a>
+                <a href="#pow-infrastructure">绿色PoW算力中心</a>
+                <a href="#hk-news">香港发展与新闻</a>
+                <a href="#esg-compliance">ESG合规与证明</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 巨幕 Banner -->
+        <section class="hero">
+            <span class="status-badge">Hong Kong Web3 & Renewable Hashrate Platform</span>
+            <h1>香港绿能算力科技集团</h1>
+            <p>基于香港金融科技与 Web3 政策框架，融合绿色零碳能源与分布式 PoW（比特币）算力网络，打造全球领先的 ESG 算力基础设施与数字资产托管服务平台。</p>
+        </section>
+
+        <!-- 核心业务指标 -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">12.5 EH/s</div>
+                <div class="metric-label">全球绿色比特币算力规模</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">85% +</div>
+                <div class="metric-label">可再生能源占比 (光伏/风电/水电)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">HK$ 10B+</div>
+                <div class="metric-label">香港数码港/Web3 托管储备资产</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">Net Zero</div>
+                <div class="metric-label">2028 算力网络零碳排放目标</div>
+            </div>
+        </div>
+
+        <!-- 版块一：香港总部与战略分布 -->
+        <section id="hk-operations" class="section">
+            <div class="section-header">
+                <h2>1. 香港总部架构与 Web3 战略底座</h2>
+                <p>依托香港国际金融中心地位，链接全球优质清洁能源资产与资本市场。</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=800&q=80" alt="香港数码港总部" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">Hong Kong Corporate HQ</div>
+                            <div class="card-title">香港数码港 Web3 创新算力中心</div>
+                            <p class="card-desc">集团总部落户香港数码港（Cyberport），全面遵守香港证监会（SFC）与金管局（HKMA）监管合规指引，设立数字资产合规托管与算力 RWA 资产化研发中心。</p>
+                        </div>
+                        <ul class="meta-list">
+                            <li><strong>注册编号:</strong> HK-CR-3298412</li>
+                            <li><strong>主要职能:</strong> 算力金融化 (RWA)、跨境资金清算、绿能基金管理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" alt="新能源基础设施" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">Energy Operations</div>
+                            <div class="card-title">大湾区绿能网关与海外微电网部署</div>
+                            <p class="card-desc">联结大湾区清洁能源供应链，在北美及南美部署水冷集装箱式比特币挖矿微电网，实现电力负荷动态响应与弃风弃光电力的百分之百再利用。</p>
+                        </div>
+                        <ul class="meta-list">
+                            <li><strong>主要能源:</strong> 负荷调峰水电、沙漠光伏、风力弃电</li>
+                            <li><strong>散热技术:</strong> 全封闭浸没式液冷（Immersion Cooling）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 版块二：绿色 PoW 算力基础设施 -->
+        <section id="pow-infrastructure" class="section">
+            <div class="section-header">
+                <h2>2. 绿色 PoW 比特币算力基础设施</h2>
+                <p>利用高密度算力硬件与智能微电网系统，将清洁能源转化为高价值加密资产。</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80" alt="比特币挖矿硬件" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">Hardware Fleet</div>
+                            <div class="card-title">自研及最新代比特大陆矿机阵列</div>
+                            <p class="card-desc">部署超过 40,000 台 Antminer S21 / Hydro 水冷矿机，算力能效比达到 17.5 J/TH，显著降低单枚 BTC 挖矿电耗成本。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80" alt="风力与光伏发电" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">Sustainable Energy</div>
+                            <div class="card-title">电网消纳与消峰填谷算法</div>
+                            <p class="card-desc">通过自主研发的 AI 调度系统，矿场可根据当地电网用电高峰在 3 秒内切断或降低负荷，为当地电网提供稳定的柔性支撑。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80" alt="区块链代币化" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">RWA Tokenization</div>
+                            <div class="card-title">香港算力 RWA 与绿能通证</div>
+                            <p class="card-desc">将实物算力收益与碳减排额度（REC）上链，推出合规的算力收益代币与绿能凭证，让全球机构投资者直接分享比特币挖矿红利。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 版块三：香港发展动态与新闻跳转 -->
+        <section id="hk-news" class="section">
+            <div class="section-header">
+                <h2>3. 香港各地发展动态与行业新闻</h2>
+                <p>实时追踪香港在数字资产、新能源金融及区块链算力领域的最新官方动态与新闻报道。</p>
+            </div>
+
+            <div class="grid-3">
+
+                <!-- 新闻 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="香港中环金融区" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">香港中环 · 政策动态</div>
+                            <div class="card-title">香港金管局（HKMA）推进“Ensemble”项目，深化绿能 RWA 算力通证化试点</div>
+                            <p class="card-desc">香港金融管理局正式公布代币化资产架构，将清洁能源基础设施与比特币算力资产列入重点应用场景，助力香港建立全球 Web3 资金清算中心。</p>
+                        </div>
+                        <a href="https://www.hkma.gov.hk" target="_blank" rel="noopener" class="btn-link">查看香港金管局官方新闻 ➔</a>
+                    </div>
+                </div>
+
+                <!-- 新闻 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="香港数码港" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">香港数码港 · 产业升级</div>
+                            <div class="card-title">香港数码港设立专项 Web3 创新基金，本集团获选“绿色算力示范企业”</div>
+                            <p class="card-desc">数码港入驻生态企业突破 250 家，集团通过独创的“绿能+PoW挖矿”闭环模式，获得香港政府 Web3 专项补贴与产业基金跟投支持。</p>
+                        </div>
+                        <a href="https://www.cyberport.hk" target="_blank" rel="noopener" class="btn-link">访问数码港官方新闻网 ➔</a>
+                    </div>
+                </div>
+
+                <!-- 新闻 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" alt="香港科技园" class="card-img">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-tag">香港科学园 · 研发突破</div>
+                            <div class="card-title">香港科技园联合集团发布《绿色加密算力与气候零碳白皮书》</div>
+                            <p class="card-desc">白皮书指出，通过将废弃天然气与水力电能转化为比特币算力，不仅可大幅降低碳排放，更为香港投资者提供了多元化的低风险加密资产配置方案。</p>
+                        </div>
+                        <a href="https://www.hkstp.org" target="_blank" rel="noopener" class="btn-link">查阅香港科技园发布详情 ➔</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 版块四：ESG 合规与文件下载 -->
+        <section id="esg-compliance" class="section">
+            <div class="section-header">
+                <h2>4. 集团 ESG 合规证明与官方文件下载</h2>
+                <p>提供经审计的第三方财务报告、绿色能源认证与香港公司合规注册文件。</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">香港注册证明文件与商业登记证 (CR/HKBR)</div>
+                            <p class="card-desc">包含香港公司注册处官方证书、商业登记证（Business Registration）及法定董事签署名单。</p>
+                        </div>
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size:0.8rem; font-family:monospace; color:var(--accent-cyan);">DOC ID: HK-CR-2026-CERT</span>
+                            <a href="docs/HK_Certificate_of_Incorporation.pdf" download class="btn-link">下载 PDF (1.2 MB)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">绿色比特币算力碳减排认证报告 (REC Report)</div>
+                            <p class="card-desc">由国际著名第三方检测机构出具的清洁能源使用比例与碳抵消积分（Carbon Credit）核验报告。</p>
+                        </div>
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size:0.8rem; font-family:monospace; color:var(--accent-cyan);">DOC ID: ESG-BTC-2026-VERIFIED</span>
+                            <a href="docs/Green_Mining_ESG_Audit.pdf" download class="btn-link">下载 PDF (2.4 MB)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Terrahash Energy Holdings (Hong Kong) Limited. 版权所有 | 香港数码港核心成员企业</p>
+    </footer>
+
+</body>
+</html>
