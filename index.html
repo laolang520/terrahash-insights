@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Proof of Reserves, Site Control & Regulatory Permits | Terrahash Energy</title>
+    <title>Institutional Credentials & Site Control | Terrahash Energy Group</title>
     <style>
         :root {
-            --primary-navy: #0a192f;
-            --secondary-navy: #112240;
+            --primary-navy: #081226;
+            --secondary-navy: #0f1d38;
             --accent-green: #10b981;
+            --accent-gold: #d97706;
             --accent-cyan: #38bdf8;
-            --accent-gold: #f59e0b;
-            --text-main: #e2e8f0;
+            --text-main: #f1f5f9;
             --text-muted: #94a3b8;
-            --border-color: #233554;
+            --border-color: #1e293b;
         }
 
         * {
@@ -34,15 +34,15 @@
         header {
             position: sticky;
             top: 0;
-            background-color: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(8px);
+            background-color: rgba(8, 18, 38, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 15px 0;
+            padding: 16px 0;
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -52,21 +52,23 @@
 
         .logo {
             font-size: 1.4rem;
-            font-weight: bold;
+            font-weight: 700;
             color: #ffffff;
             text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
         .logo span {
-            color: var(--accent-green);
+            color: var(--accent-gold);
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.95rem;
+            margin-left: 24px;
+            font-size: 0.9rem;
             font-weight: 500;
+            transition: color 0.2s;
         }
 
         nav a:hover {
@@ -74,7 +76,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -82,38 +84,39 @@
         /* Hero Header */
         .hero {
             text-align: center;
-            padding: 40px 0 50px;
+            padding: 50px 0 40px;
             border-bottom: 1px solid var(--border-color);
         }
 
         .status-badge {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent-green);
-            border: 1px solid var(--accent-green);
+            background: rgba(217, 119, 6, 0.12);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
             padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            line-height: 1.25;
         }
 
         .hero p {
             color: var(--text-muted);
             font-size: 1.15rem;
-            max-width: 850px;
+            max-width: 880px;
             margin: 0 auto;
         }
 
-        /* High Level Key Indicators */
+        /* Institutional Key Metrics */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -125,20 +128,20 @@
             background-color: var(--secondary-navy);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 25px;
+            padding: 24px;
             text-align: center;
         }
 
         .metric-value {
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: bold;
             color: var(--accent-gold);
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .metric-label {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -150,7 +153,7 @@
         }
 
         .section-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             color: #ffffff;
             margin-bottom: 8px;
         }
@@ -158,15 +161,16 @@
         .section-header p {
             color: var(--text-muted);
             margin-bottom: 30px;
+            font-size: 0.95rem;
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-            gap: 25px;
+            gap: 24px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .grid-2 {
                 grid-template-columns: 1fr;
             }
@@ -176,16 +180,16 @@
             background-color: var(--secondary-navy);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 30px;
+            padding: 28px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--accent-cyan);
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             font-weight: 600;
         }
 
@@ -195,7 +199,7 @@
         }
 
         .meta-list li {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             margin-bottom: 10px;
             color: var(--text-muted);
         }
@@ -209,8 +213,8 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-            margin-top: 15px;
+            padding-top: 18px;
+            margin-top: 12px;
             flex-wrap: wrap;
             gap: 10px;
         }
@@ -220,7 +224,7 @@
             color: var(--accent-cyan);
             padding: 4px 10px;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-family: monospace;
         }
 
@@ -229,9 +233,9 @@
             align-items: center;
             gap: 8px;
             background-color: var(--accent-green);
-            color: #0a192f;
+            color: #081226;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
@@ -242,7 +246,7 @@
             opacity: 0.9;
         }
 
-        /* Document Archive Table */
+        /* Document Table */
         .archive-table {
             width: 100%;
             border-collapse: collapse;
@@ -254,20 +258,20 @@
         }
 
         .archive-table th, .archive-table td {
-            padding: 15px 20px;
+            padding: 14px 20px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
 
         .archive-table th {
-            background-color: rgba(16, 185, 129, 0.05);
-            color: var(--accent-green);
-            font-size: 0.85rem;
+            background-color: rgba(217, 119, 6, 0.08);
+            color: var(--accent-gold);
+            font-size: 0.82rem;
             text-transform: uppercase;
         }
 
         .archive-table td {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--text-muted);
         }
 
@@ -288,66 +292,66 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Terrahash <span>Energy</span></a>
+            <a href="#" class="logo">Terrahash <span>Energy Group</span></a>
             <nav>
-                <a href="#treasury-proof">Capital & Treasury</a>
-                <a href="#land-control">Land Rights</a>
-                <a href="#grid-power">Power & Grid</a>
-                <a href="#document-archive">Download Archive</a>
+                <a href="#hk-corporate">HK Holding Entity</a>
+                <a href="#us-land">U.S. Site Control</a>
+                <a href="#grid-ppa">Grid Interconnection</a>
+                <a href="#document-archive">Appendix Archive</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- Hero Header Section -->
+        <!-- Hero Header -->
         <section class="hero">
-            <span class="status-badge">Audited Compliance & Financial Strength</span>
-            <h1>Institutional Proof of Reserves & Site Control</h1>
-            <p>Verification dashboard disclosing verified capital reserves, executed long-term ground leases, and active grid interconnection permits for institutional partners and investors.</p>
+            <span class="status-badge">Cross-Border Institutional Structure</span>
+            <h1>Hong Kong Corporate Standing & U.S. Infrastructure Execution</h1>
+            <p>Official disclosure portal providing institutional partners with audited proof of corporate standing (Hong Kong Parent Entity), U.S. land control deeds, and 150MW ERCOT grid interconnection rights.</p>
         </section>
 
         <!-- Metrics Dashboard -->
         <div class="metrics-grid">
             <div class="metric-card">
+                <div class="metric-value">HK Parent</div>
+                <div class="metric-label">Hong Kong Registered Holding Corp</div>
+            </div>
+            <div class="metric-card">
                 <div class="metric-value">$50M+ USD</div>
-                <div class="metric-label">Capital Reserves & Committed Liquidity</div>
+                <div class="metric-label">Audited Treasury & Bank Reserves</div>
             </div>
             <div class="metric-card">
                 <div class="metric-value">640 Acres</div>
-                <div class="metric-label">Secured Industrial Fee-Simple Land</div>
+                <div class="metric-label">Secured Industrial Fee-Simple Land (U.S.)</div>
             </div>
             <div class="metric-card">
                 <div class="metric-value">150 MW</div>
-                <div class="metric-label">Approved Grid Interconnection (ERCOT)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">100% Zero Emission</div>
-                <div class="metric-label">Behind-The-Meter Solar + Storage Mix</div>
+                <div class="metric-label">Active ERCOT Grid Interconnection Queue</div>
             </div>
         </div>
 
-        <!-- Section 1: Financial Strength & Bank Proofs -->
-        <section id="treasury-proof" class="section">
+        <!-- Section 1: Hong Kong Corporate Capacity -->
+        <section id="hk-corporate" class="section">
             <div class="section-header">
-                <h2>1. Financial Standing & Bank Proof of Funds (POF)</h2>
-                <p>Verifiable treasury deployment capability backed by institutional banking facilities and third-party CPAs.</p>
+                <h2>1. Hong Kong Parent Company Standing & Financial Governance</h2>
+                <p>Global corporate headquarters managing cross-border capital deployment, ESG compliance, and institutional investor relations.</p>
             </div>
 
             <div class="grid-2">
                 <div class="card">
                     <div>
-                        <div class="card-title">Bank Letter of Financial Standing (SBLC / POF)</div>
+                        <div class="card-title">Hong Kong Certificate of Incorporation & Business Registration</div>
                         <ul class="meta-list">
-                            <li><strong>Issuing Institution:</strong> Tier-1 Commercial Bank (U.S.)</li>
-                            <li><strong>Verified Balance / Facility:</strong> $50,000,000 USD Unencumbered Equity</li>
-                            <li><strong>Account Purpose:</strong> Renewable Energy Data Center Infrastructure Buildout</li>
-                            <li><strong>Audit Attestation:</strong> Verified by Independent Certified Public Accountant (CPA)</li>
+                            <li><strong>Entity Name:</strong> Terrahash Energy Holdings (Hong Kong) Limited</li>
+                            <li><strong>CR Registration No.:</strong> HK-3298412</li>
+                            <li><strong>Business Registration (HKBR):</strong> 74829104-000-01-26-3</li>
+                            <li><strong>Jurisdiction:</strong> Hong Kong Special Administrative Region (HKSAR)</li>
                         </ul>
                     </div>
                     <div class="card-action">
-                        <span class="doc-badge">REF: BANK-POF-2026-TH</span>
-                        <a href="docs/Proof_of_Funds_Attestation.pdf" download class="btn-download">
+                        <span class="doc-badge">DOC ID: HK-CR-CERT-2026</span>
+                        <a href="docs/HK_Certificate_of_Incorporation.pdf" download class="btn-download">
                             📄 Download PDF (1.1 MB)
                         </a>
                     </div>
@@ -355,28 +359,29 @@
 
                 <div class="card">
                     <div>
-                        <div class="card-title">Corporate Treasury & Capital Commitment Letter</div>
+                        <div class="card-title">Bank Financial Capacity & Treasury Audit Letter</div>
                         <ul class="meta-list">
-                            <li><strong>Executing Entity:</strong> Terrahash Energy LLC</li>
-                            <li><strong>Capital Commitment:</strong> Phase 1 & 2 Infrastructure EPC Funding Guaranteed</li>
-                            <li><strong>Escrow Status:</strong> Performance Security Funds Deposited per Interconnection Request</li>
+                            <li><strong>Banking Partner:</strong> Tier-1 International Commercial Bank (Hong Kong Branch)</li>
+                            <li><strong>Verified Unencumbered Funds:</strong> $50,000,000+ USD Liquid Treasury</li>
+                            <li><strong>Compliance & AML:</strong> Fully Screened under HKMA / FATF Standards</li>
+                            <li><strong>Auditor Attestation:</strong> Verified by HKICPA Certified Public Accountants</li>
                         </ul>
                     </div>
                     <div class="card-action">
-                        <span class="doc-badge">DOC ID: TREASURY-2026-CERT</span>
-                        <a href="docs/Corporate_Treasury_Letter.pdf" download class="btn-download">
-                            📄 Download PDF (780 KB)
+                        <span class="doc-badge">REF: HK-BANK-POF-2026</span>
+                        <a href="docs/HK_Bank_Proof_of_Funds.pdf" download class="btn-download">
+                            📄 Download PDF (1.3 MB)
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Land Rights & Legal Deeds -->
-        <section id="land-control" class="section">
+        <!-- Section 2: U.S. Land Rights & Project Execution -->
+        <section id="us-land" class="section">
             <div class="section-header">
-                <h2>2. Executed Land Control & Real Estate Deeds</h2>
-                <p>Recorded long-term leases, industrial zoning approvals, and land ownership proofs.</p>
+                <h2>2. U.S. Project Real Estate & Site Control</h2>
+                <p>U.S. operational subsidiaries holding ground leases, industrial zoning, and environmental clearances.</p>
             </div>
 
             <div class="grid-2">
@@ -384,10 +389,10 @@
                     <div>
                         <div class="card-title">Memorandum of Long-Term Ground Lease</div>
                         <ul class="meta-list">
-                            <li><strong>Jurisdiction:</strong> Reeves County, Texas (Permian Basin Energy Corridor)</li>
-                            <li><strong>Land Parcel Acreage:</strong> 640 Acres (Fee Simple Industrial Overlay)</li>
-                            <li><strong>Lease Term:</strong> 30-Year Firm Term + Two 10-Year Renewal Options</li>
-                            <li><strong>Recording Authority:</strong> County Clerk & Recorder Office</li>
+                            <li><strong>Executing U.S. Entity:</strong> Terrahash Energy US Operating LLC</li>
+                            <li><strong>Location:</strong> Reeves County, Texas (Permian Energy Corridor)</li>
+                            <li><strong>Acreage:</strong> 640 Acres Industrial Overlay / Fee Simple Rights</li>
+                            <li><strong>Lease Term:</strong> 30-Year Firm Lease + (2) 10-Year Renewal Options</li>
                         </ul>
                     </div>
                     <div class="card-action">
@@ -400,11 +405,11 @@
 
                 <div class="card">
                     <div>
-                        <div class="card-title">County Special Use Permit (SUP) & Zoning Ordinance</div>
+                        <div class="card-title">County Special Use Permit (SUP)</div>
                         <ul class="meta-list">
-                            <li><strong>Approving Body:</strong> Reeves County Board of Commissioners</li>
-                            <li><strong>Permitted Operation:</strong> High-Density Compute Data Center & BESS Solar Farm</li>
-                            <li><strong>Environmental & Noise Ordinance:</strong> Fully Compliant / Unappealable Final Order</li>
+                            <li><strong>Issuing Authority:</strong> Reeves County Board of Commissioners</li>
+                            <li><strong>Approved Usage:</strong> High-Density Compute Data Center & BESS Solar Array</li>
+                            <li><strong>Ordinance Status:</strong> Fully Permitted & Final Order Issued</li>
                         </ul>
                     </div>
                     <div class="card-action">
@@ -417,11 +422,11 @@
             </div>
         </section>
 
-        <!-- Section 3: Interconnection & Utility Power -->
-        <section id="grid-power" class="section">
+        <!-- Section 3: Interconnection & Power -->
+        <section id="grid-ppa" class="section">
             <div class="section-header">
-                <h2>3. Interconnection Agreement & Power Supply (PPA)</h2>
-                <p>Binding utility interconnection queue rights and dynamic load response agreements.</p>
+                <h2>3. Utility Grid Interconnection & Renewable Power</h2>
+                <p>Direct grid transmission access agreements and off-grid behind-the-meter solar integration.</p>
             </div>
 
             <div class="grid-2">
@@ -429,9 +434,9 @@
                     <div>
                         <div class="card-title">Large Generator Interconnection Agreement (LGIA)</div>
                         <ul class="meta-list">
-                            <li><strong>Grid Regional Operator:</strong> ERCOT Substation Interconnect</li>
-                            <li><strong>Total Approved Capacity:</strong> 150 MW Firm Capacity</li>
-                            <li><strong>Point of Interconnection (POI):</strong> 138kV Substation Extension Line</li>
+                            <li><strong>RTO / ISO Region:</strong> ERCOT Substation Interconnect</li>
+                            <li><strong>Approved Load Capacity:</strong> 150 MW Firm Capacity</li>
+                            <li><strong>Interconnection Voltage:</strong> 138kV Transmission Substation Access</li>
                         </ul>
                     </div>
                     <div class="card-action">
@@ -448,46 +453,46 @@
         <section id="document-archive" class="section">
             <div class="section-header">
                 <h2>4. Complete Institutional Appendix Archive</h2>
-                <p>Download signed and notarized regulatory copies for corporate due diligence.</p>
+                <p>Download official copies of corporate charters, bank attestations, and land titles.</p>
             </div>
 
             <table class="archive-table">
                 <thead>
                     <tr>
                         <th>Document Title</th>
-                        <th>Category</th>
-                        <th>Format</th>
+                        <th>Classification</th>
+                        <th>File Format</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="doc-name">Bank Proof of Funds (POF) Attestation Letter ($50M)</td>
-                        <td>Financial Reserve</td>
+                        <td class="doc-name">Hong Kong Corporate Registration Certificate (CR / HKBR)</td>
+                        <td>HK Holding Entity</td>
                         <td>PDF (1.1 MB)</td>
-                        <td><a href="docs/Proof_of_Funds_Attestation.pdf" download class="btn-download">Download</a></td>
+                        <td><a href="docs/HK_Certificate_of_Incorporation.pdf" download class="btn-download">Download</a></td>
                     </tr>
                     <tr>
-                        <td class="doc-name">Corporate Treasury Escrow Guarantee</td>
-                        <td>Treasury Commitment</td>
-                        <td>PDF (780 KB)</td>
-                        <td><a href="docs/Corporate_Treasury_Letter.pdf" download class="btn-download">Download</a></td>
+                        <td class="doc-name">HK Bank $50M Treasury Proof of Funds Attestation</td>
+                        <td>Financial Reserve</td>
+                        <td>PDF (1.3 MB)</td>
+                        <td><a href="docs/HK_Bank_Proof_of_Funds.pdf" download class="btn-download">Download</a></td>
                     </tr>
                     <tr>
-                        <td class="doc-name">Reeves County Memorandum of Ground Lease (640 Acres)</td>
-                        <td>Real Estate Control</td>
+                        <td class="doc-name">Texas Memorandum of Ground Lease (640 Acres)</td>
+                        <td>U.S. Site Control</td>
                         <td>PDF (1.5 MB)</td>
                         <td><a href="docs/Ground_Lease_Agreement.pdf" download class="btn-download">Download</a></td>
                     </tr>
                     <tr>
-                        <td class="doc-name">Special Use Permit Ordinance (SUP-2025-0441-A)</td>
+                        <td class="doc-name">Reeves County Special Use Permit Ordinance</td>
                         <td>Zoning Permit</td>
                         <td>PDF (920 KB)</td>
                         <td><a href="docs/Special_Use_Permit.pdf" download class="btn-download">Download</a></td>
                     </tr>
                     <tr>
-                        <td class="doc-name">150 MW ERCOT Large Generator Interconnection Agreement</td>
-                        <td>Power Interconnect</td>
+                        <td class="doc-name">ERCOT 150MW Large Generator Interconnection Agreement</td>
+                        <td>Utility Power</td>
                         <td>PDF (2.4 MB)</td>
                         <td><a href="docs/Interconnection_Agreement.pdf" download class="btn-download">Download</a></td>
                     </tr>
@@ -498,7 +503,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Terrahash Energy. All Rights Reserved. | Confidential Institutional Information</p>
+        <p>&copy; 2026 Terrahash Energy Holdings (Hong Kong) Limited. All Rights Reserved.</p>
     </footer>
 
 </body>
